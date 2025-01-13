@@ -10,4 +10,3 @@ The application is a simple dashboard for the beacon chain validators. It is bui
 
 Check out [Ethereum 2 Validators](https://beacon-validators.vercel.app/) deployed on Vercel.
 
-Powered by [Quicknode](https://www.quicknode.com/).
