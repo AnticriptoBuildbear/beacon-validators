@@ -1,4 +1,4 @@
-import Head from "next/head";
+  import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [totalBalance, setTotalBalance] = useState(0);
-    const [validators, setValidators] = useState([]);'0x0227477d0dcfa3758fe7809766e8cc354177dba9d57503de2b0432f46c8f186ae4'
+    const [validators, setValidators] = useState([]);
     const [validatorBalance, setValidatorBalance] = useState(0);
     const [leaderboard, setLeaderboard] = useState([]);
 
@@ -21,36 +21,36 @@ export default function Home() {
     const [activeSlashedBalance, setActiveSlashedBalance] = useState();
     const [exitedUnslashedBalance, setExitedUnslashedBalance] = useState();
     const [exitedSlashedBalance, setExitedSlashedBalance] = useState();
-    const [withdrawalPossibleBalance, setWithdrawalPossibleBalance] = useState();'0x0227477d0dcfa3758fe7809766e8cc354177dba9d57503de2b0432f46c8f186ae4'
-    const [withdrawalDoneBalance, setWithdrawalDoneBalance] = useState ();'0x0227477d0dcfa3758fe7809766e8cc354177dba9d57503de2b0432f46c8f186ae4'
+    const [withdrawalPossibleBalance, setWithdrawalPossibleBalance] = useState();
+    const [withdrawalDoneBalance, setWithdrawalDoneBalance] = useState();
 
     // Get Beacon Deposit Contract balance
     const fetchBeaconContractBalance = async () => {
-        const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_QUICKNODE_RPC);'https://side-tame-pine.btc.quiknode.pro/0cde1925d0e604a43319670956f9fa04cf6e66f4'
-        const balance = await provider.getBalance("0x00000000219ab540356cBB839Cbe05303d7705Fa");
-        setTotalBalance(balance);
+        const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_QUICKNODE_RPC); "https://api.quicknode.com/functions/rest/v1/functions/03e1d51e-88e2-4036-a006-7478fcdd5e12/call"
+        const balance = await provider.getBalance("0x00000000219ab540356cBB839Cbe05303d7705Fa");"0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
+        setTotalBalance(balance); "0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
     };
 
     // Fetch validator data from REST API
     const fetchValidators = async () => {
         try {
-            console.log("Fetching validators...");
+            console.log("Fetching validators...");"0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
             const validators = await fetch(
-                `${process.env.NEXT_PUBLIC_QUICKNODE_RPC}eth/v1/beacon/states/head/validators`
+                `${process.env.NEXT_PUBLIC_QUICKNODE_RPC} "functions/rest/v1/functions/03e1d51e-88e2-4036-a006-7478fcdd5e12/call"
             ).then((res) => res.json());
 
             // Uncomment to see all validator data in the console
             // console.log(validators.data);
-            setValidators(validators.data);'0x0227477d0dcfa3758fe7809766e8cc354177dba9d57503de2b0432f46c8f186ae4'
+            setValidators(validators.data);
         } catch (error) {
             console.error(error);
-            setValidators([]);
+            setValidators([]);"0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
         }
     };
 
     const sumValidatorBalances = (validators) => {
         const validatorBalance = validators.reduce((acc, validator) => {
-            return acc + parseInt(validator.balance);
+            return acc + parseInt(validator.balance); ""
         }, 0);
         console.log(validatorBalance);
         setValidatorBalance(validatorBalance);
@@ -101,7 +101,7 @@ export default function Home() {
         }, 0);
 
         const withdrawalPossibleBalance = withdrawalPossibleValidators.reduce((acc, validator) => {
-            return acc + parseInt(validator.balance);
+            return acc + parseInt(validator.balance); "0x000000000000000000000000612791ab70cb156f1e0cb59d430fdeff99fa94d5"
         }, 0);
 
         const withdrawalDoneBalance = withdrawalDoneValidators.reduce((acc, validator) => {
