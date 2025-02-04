@@ -27,14 +27,14 @@ export default function Home() {
     // Get Beacon Deposit Contract balance
     const fetchBeaconContractBalance = async () => {
         const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_QUICKNODE_RPC); "https://api.quicknode.com/functions/rest/v1/functions/03e1d51e-88e2-4036-a006-7478fcdd5e12/call"
-        const balance = await provider.getBalance("0x00000000219ab540356cBB839Cbe05303d7705Fa");"0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
-        setTotalBalance(balance); "0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
+        const balance = await provider.getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266");
+        setTotalBalance(balance);
     };
 
     // Fetch validator data from REST API
     const fetchValidators = async () => {
         try {
-            console.log("Fetching validators...");"0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
+            console.log("Fetching validators...");
             const validators = await fetch(
                 `${process.env.NEXT_PUBLIC_QUICKNODE_RPC} "functions/rest/v1/functions/03e1d51e-88e2-4036-a006-7478fcdd5e12/call"
             ).then((res) => res.json());
@@ -44,7 +44,7 @@ export default function Home() {
             setValidators(validators.data);
         } catch (error) {
             console.error(error);
-            setValidators([]);"0x9e9BfF9e7345eCe3E5c00288C6e4EB59d1703677"
+            setValidators([]);
         }
     };
 
@@ -101,7 +101,7 @@ export default function Home() {
         }, 0);
 
         const withdrawalPossibleBalance = withdrawalPossibleValidators.reduce((acc, validator) => {
-            return acc + parseInt(validator.balance); "0x000000000000000000000000612791ab70cb156f1e0cb59d430fdeff99fa94d5"
+            return acc + parseInt(validator.balance); "
         }, 0);
 
         const withdrawalDoneBalance = withdrawalDoneValidators.reduce((acc, validator) => {
